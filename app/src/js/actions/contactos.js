@@ -1,6 +1,6 @@
 import axios from 'axios';
 import findIndex from 'lodash/findIndex';
-import * as ACCIONES from '../constants/contactos';
+import * as CONSTANTES from '../constants/contactos';
 import { apiUrl } from '../utils/http';
 
 // d_ GENERALES
@@ -8,7 +8,7 @@ import { apiUrl } from '../utils/http';
 
 export function limpiarFormulario() {
   return {
-    type: ACCIONES.ESTADO_CONTACTOS.LIMPIAR_FORMULARIO,
+    type: CONSTANTES.ESTADO_CONTACTOS.LIMPIAR_FORMULARIO,
     payload: {
       nombre: '',
       celular: ''
@@ -18,7 +18,7 @@ export function limpiarFormulario() {
 
 export function guardarNombre(nombre) {
   return {
-    type: ACCIONES.ESTADO_CONTACTOS.GUARDAR_NOMBRE,
+    type: CONSTANTES.ESTADO_CONTACTOS.GUARDAR_NOMBRE,
     payload: {
       nombre,
     }
@@ -27,7 +27,7 @@ export function guardarNombre(nombre) {
 
 export function guardarCelular(celular) {
   return {
-    type: ACCIONES.ESTADO_CONTACTOS.GUARDAR_CELULAR,
+    type: CONSTANTES.ESTADO_CONTACTOS.GUARDAR_CELULAR,
     payload: {
       celular
     }
@@ -39,7 +39,7 @@ export function guardarCelular(celular) {
 
 export function obtenerContactosInicio() {
   return {
-    type: ACCIONES.OBTENER_CONTACTOS.INICIO,
+    type: CONSTANTES.OBTENER_CONTACTOS.INICIO,
     payload: {
       contactos: [],
       cargando: true,
@@ -50,7 +50,7 @@ export function obtenerContactosInicio() {
 
 export function obtenerContactosCompletado(contactos) {
   return {
-    type: ACCIONES.OBTENER_CONTACTOS.COMPLETADO,
+    type: CONSTANTES.OBTENER_CONTACTOS.COMPLETADO,
     payload: {
       contactos,
       cargando: false,
@@ -61,7 +61,7 @@ export function obtenerContactosCompletado(contactos) {
 
 export function obtenerContactosError(error) {
   return {
-    type: ACCIONES.OBTENER_CONTACTOS.ERROR,
+    type: CONSTANTES.OBTENER_CONTACTOS.ERROR,
     payload: {
       error,
       cargando: false
@@ -88,7 +88,7 @@ export function obtenerContactos() {
 
 export function crearContactoInicio() {
   return {
-    type: ACCIONES.CREAR_CONTACTO.INICIO,
+    type: CONSTANTES.CREAR_CONTACTO.INICIO,
     payload: {
       cargando: true,
       error: ''
@@ -98,7 +98,7 @@ export function crearContactoInicio() {
 
 export function crearContactoCompletado(contacto) {
   return {
-    type: ACCIONES.CREAR_CONTACTO.COMPLETADO,
+    type: CONSTANTES.CREAR_CONTACTO.COMPLETADO,
     payload: {
       contacto,
       cargando: false,
@@ -109,7 +109,7 @@ export function crearContactoCompletado(contacto) {
 
 export function crearContactoError(error) {
   return {
-    type: ACCIONES.CREAR_CONTACTO.ERROR,
+    type: CONSTANTES.CREAR_CONTACTO.ERROR,
     payload: {
       error,
       cargando: false
@@ -135,7 +135,7 @@ export function crearContacto() {
 
 export function actualizarContactoInicio() {
   return {
-    type: ACCIONES.ACTUALIZAR_CONTACTO.INICIO,
+    type: CONSTANTES.ACTUALIZAR_CONTACTO.INICIO,
     payload: {
       cargando: true,
       error: ''
@@ -145,7 +145,7 @@ export function actualizarContactoInicio() {
 
 export function actualizarContactoCompletado(contacto, index) {
   return {
-    type: ACCIONES.ACTUALIZAR_CONTACTO.COMPLETADO,
+    type: CONSTANTES.ACTUALIZAR_CONTACTO.COMPLETADO,
     payload: {
       contacto,
       index,
@@ -157,7 +157,7 @@ export function actualizarContactoCompletado(contacto, index) {
 
 export function actualizarContactoError(error) {
   return {
-    type: ACCIONES.ACTUALIZAR_CONTACTO.ERROR,
+    type: CONSTANTES.ACTUALIZAR_CONTACTO.ERROR,
     payload: {
       error,
       cargando: false
@@ -191,7 +191,7 @@ export function actualizarContacto(nombre, celular, uid) {
 
 export function borrarContactoInicio() {
   return {
-    type: ACCIONES.BORRAR_CONTACTO.INICIO,
+    type: CONSTANTES.BORRAR_CONTACTO.INICIO,
     payload: {
       cargando: true,
       error: ''
@@ -201,7 +201,7 @@ export function borrarContactoInicio() {
 
 export function borrarContactoCompletado(uid, index) {
   return {
-    type: ACCIONES.BORRAR_CONTACTO.COMPLETADO,
+    type: CONSTANTES.BORRAR_CONTACTO.COMPLETADO,
     payload: {
       uid,
       index,
@@ -213,7 +213,7 @@ export function borrarContactoCompletado(uid, index) {
 
 export function borrarContactoError(error) {
   return {
-    type: ACCIONES.BORRAR_CONTACTO.ERROR,
+    type: CONSTANTES.BORRAR_CONTACTO.ERROR,
     payload: {
       error,
       cargando: false
